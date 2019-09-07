@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @GetMapping("/users")
-    public String listUsers(Model model, @RequestParam(defaultValue = "") String name){
-        model.addAttribute("users",userService.findByName(name));
+    public String listUsers(Model model, @RequestParam(defaultValue="")  String name) {
+        model.addAttribute("users", userService.findByName(name));
         return "views/list";
     }
 }
