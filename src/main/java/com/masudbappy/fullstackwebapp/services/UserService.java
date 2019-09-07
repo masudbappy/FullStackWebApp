@@ -51,4 +51,8 @@ public class UserService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public List<User> findByName(String name) {
+        return userRepository.findByNameLike("%"+name+"%");
+    }
 }
