@@ -37,14 +37,18 @@ public class UserService {
     }
 
     public User findOne(String email) {
-        return userRepository.getOne(email);
+        return userRepository.findByEmail(email);
     }
 
     public boolean isUserPresent(String email) {
-        User u = userRepository.getOne(email);
+        User u = userRepository.findByEmail(email);
         if (u != null) {
             return true;
         }
         return false;
+    }
+
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 }
