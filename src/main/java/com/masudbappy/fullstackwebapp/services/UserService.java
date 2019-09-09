@@ -55,4 +55,11 @@ public class UserService {
     public List<User> findByName(String name) {
         return userRepository.findByNameLike("%"+name+"%");
     }
+
+
+    public void deleteUser(String email){
+        if (email==null) throw new IllegalArgumentException("Email can't be null");
+        User user = userRepository.findByEmail(email);
+        this.userRepository.delete(user);
+    }
 }
