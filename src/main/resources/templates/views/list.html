@@ -22,6 +22,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Add</th>
+                    <th>Delete User</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                     <td th:text="${user.name}"></td>
                     <td th:text="${user.email}"></td>
                     <td><a  th:href="@{/addTask(email=${user.email})}" class="btn btn-dark">AddTask</a></td>
+                    <td><a  th:href="@{/deleteUser(email=${user.email})}" class="btn btn-dark">Delete</a></td>
                 </tr>
                 </tbody>
 
